@@ -24,31 +24,36 @@ class PacientData
     public int $deleted_at;
 }
 
+session_start();
+if (count($_SESSION) <= 0) {
+    $_SESSION["pacientes"] = [
+        [
+            "name" => "Gabriel",
+            "cpf" => "837894739",
+            "pai" => "Mario",
+            "mae" => "Zilda",
+            "phone" => "31989082098",
+            "email" => "gdfd@fdfdij.com",
+            "birthday" => "23/10/1989",
+        ],
+        [
+            "name" => "Deborah",
+            "cpf" => "464564",
+            "pai" => "Mario",
+            "mae" => "Zilda",
+            "phone" => "31989082098",
+            "email" => "gdfd@fdfdij.com",
+            "birthday" => "23/10/1989",
+        ]
+    ];
+}
+
 class Pacient extends Controller
 {
     public function get(): View
     {
         $viewData = [
-            "pacientes" => [
-                [
-                    "name" => "Gabriel",
-                    "cpf" => "837894739",
-                    "pai" => "Mario",
-                    "mae" => "Zilda",
-                    "phone" => "31989082098",
-                    "email" => "gdfd@fdfdij.com",
-                    "birthday" => "23/10/1989",
-                ],
-                [
-                    "name" => "Deborah",
-                    "cpf" => "464564",
-                    "pai" => "Mario",
-                    "mae" => "Zilda",
-                    "phone" => "31989082098",
-                    "email" => "gdfd@fdfdij.com",
-                    "birthday" => "23/10/1989",
-                ]
-            ]
+            "pacientes" => $_SESSION["pacientes"]
         ];
         return view('pacient', $viewData);
     }
@@ -58,13 +63,25 @@ class Pacient extends Controller
         return view('create_pacient');
     }
 
-    public function store(Request $request):void
+    public function store(Request $request)
     {
         $validatedData = $request->validate([
             'name' => ['required', 'max:20'],
             'cpf' => ['required', 'max:20']
         ]);
-        print_r($validatedData);
-        die();
+        $_SESSION["pacientes"][] = [
+            "name" => $validatedData["name"],
+            "cpf" => "464564",
+            "pai" => "Mario",
+            "mae" => "Zilda",
+            "phone" => "31989082098",
+            "email" => "gdfd@fdfdij.com",
+            "birthday" => "23/10/1989",
+        ];
+
+        return redirect('/pacientes');
+
+        //print_r($validatedData);
+        //die();
     }
 }
