@@ -33,6 +33,7 @@ Route::get('/usuarios', [User::class,'get']);
 Route::get('/pacientes', [Pacient::class,'get']);
 
 Route::get('/pacientes/cadastrar', [Pacient::class,'create']);
+Route::post('/pacientes', [Pacient::class,'store']);
 
 Route::get('/consultas', [Appointment::class,'get']);
 

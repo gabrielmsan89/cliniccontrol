@@ -5,8 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 
-
-
+use function PHPUnit\Framework\isEmpty;
 
 class PacientData
 {
@@ -57,5 +56,15 @@ class Pacient extends Controller
     public function create(): View
     {
         return view('create_pacient');
+    }
+
+    public function store(Request $request):void
+    {
+        $validatedData = $request->validate([
+            'name' => ['required', 'max:20'],
+            'cpf' => ['required', 'max:20']
+        ]);
+        print_r($validatedData);
+        die();
     }
 }
