@@ -5,8 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 
-use function PHPUnit\Framework\isEmpty;
-
 class PacientData
 {
     public int $id;
@@ -34,7 +32,7 @@ if (count($_SESSION) <= 0) {
             "mae" => "Zilda",
             "phone" => "31989082098",
             "email" => "gdfd@fdfdij.com",
-            "birthday" => "23/10/1989",
+            "birthday" => "23/10/1989"
         ],
         [
             "name" => "Deborah",
@@ -43,7 +41,7 @@ if (count($_SESSION) <= 0) {
             "mae" => "Zilda",
             "phone" => "31989082098",
             "email" => "gdfd@fdfdij.com",
-            "birthday" => "23/10/1989",
+            "birthday" => "23/10/1989"
         ]
     ];
 }
@@ -71,12 +69,16 @@ class Pacient extends Controller
         ]);
         $_SESSION["pacientes"][] = [
             "name" => $validatedData["name"],
-            "cpf" => "464564",
-            "pai" => "Mario",
-            "mae" => "Zilda",
-            "phone" => "31989082098",
-            "email" => "gdfd@fdfdij.com",
-            "birthday" => "23/10/1989",
+            "cpf" => $request->cpf,
+            "rg" => $request->rg,
+            "pai" => $request->father_name,
+            "mae" => $request->mother_name,
+            "father_cpf" => $request->father_cpf,
+            "mother_cpf" => $request->mother_cpf,
+            "phone" => $request->phone,
+            "email" => $request->email,
+            "adress" => $request->adress,
+            "birthday" => $request->birthday
         ];
 
         return redirect('/pacientes');
@@ -85,3 +87,4 @@ class Pacient extends Controller
         //die();
     }
 }
+

@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Appointment;
 use App\Http\Controllers\Calendar;
 use App\Http\Controllers\Pacient;
+use App\Http\Controllers\Payment;
 use App\Http\Controllers\Reports;
 use App\Http\Controllers\User;
 
@@ -29,11 +30,16 @@ Route::get('/login', [User::class, 'login']);
 Route::get('/logout', [User::class,'logout']);
 
 Route::get('/usuarios', [User::class,'get']);
+Route::get('/usuarios/cadastrar', [User::class,'create']);
+Route::post('/usuarios', [User::class,'store']);
 
 Route::get('/pacientes', [Pacient::class,'get']);
-
 Route::get('/pacientes/cadastrar', [Pacient::class,'create']);
 Route::post('/pacientes', [Pacient::class,'store']);
+
+Route::get('/pagamentos/{paciente}', [Payment::class,'get']);
+Route::get('/pagamentos/{paciente}/novo', [Payment::class,'create']);
+Route::post('/pagamentos/{paciente}', [Payment::class,'store']);
 
 Route::get('/consultas', [Appointment::class,'get']);
 
