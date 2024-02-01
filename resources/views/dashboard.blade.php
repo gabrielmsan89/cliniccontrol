@@ -1,31 +1,5 @@
-<style>
-    .dashboard {
-        padding: 5px;
-        //background-color: blue;
-        float: left;
-        width: 800px;
-    }
+<x-layout>
 
-    .allboxes {
-        display: flex;
-        flex-wrap: wrap;
-    }
-
-    .box {
-        display: block;
-        padding: 5px;
-        border: 1px solid black;
-        width: 200px;
-        margin: 5px;
-        height: 400px;
-    }
-</style>
-
-
-<html>
-
-<body>
-    <x-menu />
     <div class="dashboard">
         <h1>Hello {{$name}}</h1>
         <div class="allboxes">
@@ -55,6 +29,4 @@
             </div>
         </div>
     </div>
-</body>
-
-</html>
+</x-layout>

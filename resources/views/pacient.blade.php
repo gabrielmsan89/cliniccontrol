@@ -1,20 +1,11 @@
-<style>
-    td {
-        border: 1px solid black;
-    }
+<x-layout>
 
-</style>
+    <h1 class="title">Pacientes</h1>
+    <div style="text-align:right">
+        <a href="{{ url('/pacientes/cadastrar') }}"><input type="button" value="Criar paciente" class="button is-primary" /></a>
+    </div>
 
-
-<html>
-
-<body>
-    <x-menu />
-    <h1>Pacientes</h1>
-    <a href="{{ url('/pacientes/cadastrar') }}"><input type="button" value="Criar paciente" class="button" /></a> <br>
-    
-
-    <table>
+    <table class="table is-striped">
         <tr>
             <th>Nome</th>
             <th>CPF</th>
@@ -23,7 +14,7 @@
             <th>Dt de nascimento</th>
             <th>Nome do pai</th>
             <th>Nome da mãe</th>
-            <th>Pagamentos</th>
+            <th>Ações</th>
         </tr>
 
         @foreach ($pacientes as $paciente)
@@ -35,13 +26,11 @@
             <td>{{$paciente["birthday"]}}</td>
             <td>{{$paciente["pai"]}}</td>
             <td>{{$paciente["mae"]}}</td>
-            <td><a href="{{ url('/pagamentos/'.$paciente["name"])}}"><input type="button" value="Ver pagamentos" class="button" /></a><br></td>
+            <td>
+                <a href="{{ url('/pagamentos/'.$paciente["name"])}}"><i class="large material-icons">attach_money</i></a>
+            </td>
         </tr>
         @endforeach
 
     </table>
-</body>
-
-</html>
-
-
+</x-layout>

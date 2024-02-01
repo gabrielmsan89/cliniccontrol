@@ -29,7 +29,7 @@ class UserData{
 
 session_start();
 
-if (count($_SESSION)<=0) {
+if (!isset($_SESSION["usuarios"])) {
     $_SESSION["usuarios"] = [
         [
             "name" => "Jose",

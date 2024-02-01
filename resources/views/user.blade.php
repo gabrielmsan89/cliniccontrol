@@ -1,16 +1,7 @@
-<style>
-    td {
-        border: 1px solid black;
-    }
 
-</style>
+<x-layout>
 
-
-<html>
-
-<body>
-    <x-menu />
-    <h1>Usuários</h1>
+<h1>Usuários</h1>
     <a href="{{ url('/usuarios/cadastrar') }}"><input type="button" value="Criar usuário" class="button" /></a> <br>
     
 
@@ -42,6 +33,4 @@
         @endforeach
 
     </table>
-</body>
-
-</html>
+</x-layout>

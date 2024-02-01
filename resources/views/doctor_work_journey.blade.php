@@ -22,10 +22,8 @@
 </style>
 
 
-<html>
+<x-layout>
 
-<body>
-    <x-menu />
     <div class="dashboard">
         <h1>Hello agenda</h1>
         <div class="allboxes">
@@ -42,6 +40,4 @@
             </div>
         </div>
     </div>
-</body>
-
-</html>
+</x-layout>

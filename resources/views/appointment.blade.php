@@ -1,6 +1,4 @@
-<html>
-    <body>
-        <x-menu/>
+<x-layout>
+
         <h1>Hello, {{ $name }}</h1>
-    </body>
-</html>
+</x-layout>

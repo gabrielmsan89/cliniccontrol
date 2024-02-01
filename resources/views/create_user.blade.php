@@ -1,7 +1,4 @@
-<html>
-
-<body>
-    <x-menu />
+<x-layout>
     @if ($errors->any())
     <div class="alert alert-danger">
         <ul>
@@ -32,6 +29,4 @@
 
         <input type="submit" value="Salvar" class="button" /> <br>
     </form>
-</body>
-
-</html>
+</x-layout>

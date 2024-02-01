@@ -1,7 +1,5 @@
-<html>
+<x-layout>
 
-<body>
-    <x-menu />
     @if ($errors->any())
     <div class="alert alert-danger">
         <ul>
@@ -11,23 +9,93 @@
         </ul>
     </div>
     @endif
+    <h1 class="title">Cadastrar paciente</h1>
+
     <form method="POST" action="{{ url('/pacientes') }}">
         @csrf
+        <div class="columns">
+            <div class="column">
+                <div class="field">
+                    <label class="label">Nome</label>
+                    <div class="control">
+                        <input class="input" type="text" placeholder="Nome" name="name">
+                    </div>
+                </div>
 
-        Nome:<input name="name" type="text" /><br>
-        CPF:<input name="cpf" type="text" /><br>
-        RG:<input name="rg" type="text" /><br>
-        Nome do pai:<input name="father_name" type="text" /><br>
-        Nome da mãe:<input name="mother_name" type="text" /><br>
-        CPF do pai:<input name="father_cpf" type="text" /><br>
-        CPF da mãe :<input name="mother_cpf" type="text" /><br>
-        Telefone:<input name="phone" type="text" /><br>
-        E-mail:<input name="email" type="text" /><br>
-        Data de nascimento:<input name="birthday" type="text" /><br>
-        Endereço:<input name="adress" type="text" /><br>
+                <div class="field">
+                    <label class="label">CPF</label>
+                    <div class="control">
+                        <input class="input" type="text" placeholder="CPF" name="cpf">
+                    </div>
+                </div>
 
-        <input type="submit" value="Salvar" class="button" /> <br>
+                <div class="field">
+                    <label class="label">RG</label>
+                    <div class="control">
+                        <input class="input" type="text" placeholder="RG" name="rg">
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label class="label">Nome do pai</label>
+                    <div class="control">
+                        <input class="input" type="text" placeholder="Nome do pai" name="father_name">
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label class="label">Nome da mãe</label>
+                    <div class="control">
+                        <input class="input" type="text" placeholder="Nome da mãe" name="mother_name">
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label class="label">CPF do pai</label>
+                    <div class="control">
+                        <input class="input" type="text" placeholder="CPF do pai" name="father_cpf">
+                    </div>
+                </div>
+            </div>
+            <div class="column">
+                <div class="field">
+                    <label class="label">CPF da mãe</label>
+                    <div class="control">
+                        <input class="input" type="text" placeholder="CPF da mãe" name="mother_cpf">
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label class="label">Telefone</label>
+                    <div class="control">
+                        <input class="input" type="text" placeholder="Telefone" name="phone">
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label class="label">E-mail</label>
+                    <div class="control">
+                        <input class="input" type="text" placeholder="E-mail" name="email">
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label class="label">Data de nascimento</label>
+                    <div class="control">
+                        <input class="input" type="text" placeholder="Data de nascimento" name="birthday">
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label class="label">Endereço</label>
+                    <div class="control">
+                        <input class="input" type="text" placeholder="Endereço" name="address">
+                    </div>
+                </div>
+                <input type="submit" value="Salvar" class="button" />
+            </div>
+
+        </div>
     </form>
-</body>
 
-</html>
+</x-layout>

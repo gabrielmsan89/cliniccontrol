@@ -1,7 +1,5 @@
-<html>
+<x-layout>
 
-<body>
-    <x-menu />
     <h1>Novo Pagamento</h1>
     @if ($errors->any())
     <div class="alert alert-danger">
@@ -21,13 +19,10 @@
         Valor:<input name="amount" type="text" /><br>
         Data do pagamento:<input name="paid_at" type="text" /><br>
         Faturado em nome de:<select name="paid_by" id="pacient">
-        <option value="pacient-1">{{$paciente["name"]}}</option>
+            <option value="pacient-1">{{$paciente["name"]}}</option>
             <option value="pacient-father-1">{{$paciente["pai"]}}</option>
             <option value="pacient-mother-1">{{$paciente["mae"]}}</option>
         </select><br>
         <input type="submit" value="Salvar" class="button" /> <br>
     </form>
-</body>
-
-</html>
-
+</x-layout>

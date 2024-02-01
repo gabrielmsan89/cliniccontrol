@@ -1,16 +1,6 @@
-<style>
-    td {
-        border: 1px solid black;
-    }
+<x-layout>
 
-</style>
-
-
-<html>
-
-<body>
-    <x-menu />
-    <h1>Pagamentos</h1>
+<h1>Pagamentos</h1>
 
     <a href="{{ url('/pagamentos/'.$paciente["name"].'/novo')}}"><input type="button" value="Novo pagamento" class="button" /></a><br>    
     
@@ -33,7 +23,5 @@
         @endforeach
 
     </table>
-</body>
 
-</html>
-
+</x-layout>
