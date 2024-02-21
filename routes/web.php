@@ -4,8 +4,8 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\Appointment;
 use App\Http\Controllers\Calendar;
-use App\Http\Controllers\Pacient;
-use App\Http\Controllers\Payment;
+use App\Http\Controllers\patient;
+use App\Http\Controllers\Ledger;
 use App\Http\Controllers\Reports;
 use App\Http\Controllers\User;
 
@@ -21,7 +21,7 @@ use App\Http\Controllers\User;
 */
 
  
-//Route::get('/{id}', [Pacient::class,'get']);
+//Route::get('/{id}', [patient::class,'get']);
 
 Route::get('/', [Reports::class,'Dashboard']);
 
@@ -33,13 +33,13 @@ Route::get('/usuarios', [User::class,'get']);
 Route::get('/usuarios/cadastrar', [User::class,'create']);
 Route::post('/usuarios', [User::class,'store']);
 
-Route::get('/pacientes', [Pacient::class,'get']);
-Route::get('/pacientes/cadastrar', [Pacient::class,'create']);
-Route::post('/pacientes', [Pacient::class,'store']);
+Route::get('/pacientes', [patient::class,'get']);
+Route::get('/pacientes/cadastrar', [patient::class,'create']);
+Route::post('/pacientes', [patient::class,'store']);
 
-Route::get('/pagamentos/{paciente}', [Payment::class,'get']);
-Route::get('/pagamentos/{paciente}/novo', [Payment::class,'create']);
-Route::post('/pagamentos/{paciente}', [Payment::class,'store']);
+Route::get('/extratos/getbypatient/{patient}', [Ledger::class,'getBypatient']);
+Route::get('/extratos/getbypatient/{patient}/novo', [Ledger::class,'create']);
+Route::post('/extratos', [Ledger::class,'store']);
 
 Route::get('/consultas', [Appointment::class,'get']);
 

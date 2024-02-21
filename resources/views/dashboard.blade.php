@@ -7,15 +7,15 @@
                 <h2>Consultas de hoje</h2>
                 <ul>
                     @foreach ($consultas as $consulta)
-                    <li>{{$consulta["paciente"]}} | {{$consulta["nomeMedico"]}} | {{$consulta["horario"]}} | Dermatologia</li>
+                    <li>{{$consulta["patient"]}} | {{$consulta["nomeMedico"]}} | {{$consulta["horario"]}} | Dermatologia</li>
                     @endforeach
                 </ul>
             </div>
             <div class="aniversariantes box">
-                <h2>Pacientes aniversariantes de hoje</h2>
+                <h2>patients aniversariantes de hoje</h2>
                 <ul>
                     @foreach ($aniversariantes as $aniversariante)
-                    <li>{{$aniversariante["paciente"]}} | {{$aniversariante["idade"]}}</li>
+                    <li>{{$aniversariante["patient"]}} | {{$aniversariante["idade"]}}</li>
                     @endforeach
                 </ul>
             </div>
@@ -23,7 +23,7 @@
                 <h2>Fila de espera</h2>
                 <ul>
                     @foreach ($consultas as $consulta)
-                    <li>{{$consulta["paciente"]}} | {{$consulta["nomeMedico"]}} | Dermatologia</li>
+                    <li>{{$consulta["patient"]}} | {{$consulta["nomeMedico"]}} | Dermatologia</li>
                     @endforeach
                 </ul>
             </div>

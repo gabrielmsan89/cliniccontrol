@@ -1,6 +1,5 @@
 <x-layout>
 
-    <h1>Novo Pagamento</h1>
     @if ($errors->any())
     <div class="alert alert-danger">
         <ul>
@@ -10,19 +9,42 @@
         </ul>
     </div>
     @endif
-    <form method="POST" action="{{ url('/pagamentos') }}">
+
+    <h1 class="title">Novo Pagamento</h1>
+
+    <form method="POST" action="{{ url('/extratos/') }}">
         @csrf
 
-        Nome do paciente: <select name="pacient" id="pacient">
-            <option value="pacient-name">{{$paciente["name"]}}</option>
-        </select><br>
-        Valor:<input name="amount" type="text" /><br>
-        Data do pagamento:<input name="paid_at" type="text" /><br>
-        Faturado em nome de:<select name="paid_by" id="pacient">
-            <option value="pacient-1">{{$paciente["name"]}}</option>
-            <option value="pacient-father-1">{{$paciente["pai"]}}</option>
-            <option value="pacient-mother-1">{{$paciente["mae"]}}</option>
-        </select><br>
+        <div class="columns">
+            <div class="column">
+                <div class="field">
+                    <label class="label">Nome do paciente</label>
+                    <div class="control">
+                        <select name="patient" id="patient">
+                            <option value="{{$patient['name']}}">{{$patient['name']}}</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">Valor</label>
+                    <div class="control">
+                        <input name="amount" type="text" />
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">Pago por</label>
+                    <div class="control">
+                        <input name="paid_by" type="text" />
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">CPF do pagador</label>
+                    <div class="control">
+                        <input name="paid_by_cpf" type="text" />
+                    </div>
+                </div>
+            </div>
+        </div>
         <input type="submit" value="Salvar" class="button" /> <br>
     </form>
 </x-layout>

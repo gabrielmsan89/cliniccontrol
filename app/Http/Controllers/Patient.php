@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 
-class PacientData
+class patientData
 {
     public int $id;
 
@@ -23,8 +23,9 @@ class PacientData
 }
 
 session_start();
-if (count($_SESSION) <= 0) {
-    $_SESSION["pacientes"] = [
+//session_destroy();
+if (!isset($_SESSION["patients"])) {
+    $_SESSION["patients"] = [
         [
             "name" => "Gabriel",
             "cpf" => "837894739",
@@ -46,28 +47,37 @@ if (count($_SESSION) <= 0) {
     ];
 }
 
-class Pacient extends Controller
+class patient extends Controller
 {
     public function get(): View
     {
         $viewData = [
-            "pacientes" => $_SESSION["pacientes"]
+            "patients" => $_SESSION["patients"]
         ];
-        return view('pacient', $viewData);
+        return view('patient', $viewData);
     }
 
     public function create(): View
     {
-        return view('create_pacient');
+        return view('create_patient');
     }
 
     public function store(Request $request)
     {
         $validatedData = $request->validate([
-            'name' => ['required', 'max:20'],
-            'cpf' => ['required', 'max:20']
+            'name' => ['required','min:10', 'max:40'],
+            'cpf' => ['required', 'cpf'],
+            'rg' => ['max:10','min:6'],
+            'pai' => ['min:10', 'max:40'],
+            'mae' => ['min:10', 'max:40'],
+            'father_cpf' => ['cpf'],
+            'mother_cpf' => ['cpf'],
+            'phone' => ['celular_com_ddd'],
+            'email' => ['max:5'],
+            'address' => ['max:50','min:1'],
+            'birthday' => ['date_format:d/m/Y']
         ]);
-        $_SESSION["pacientes"][] = [
+        $_SESSION["patients"][] = [
             "name" => $validatedData["name"],
             "cpf" => $request->cpf,
             "rg" => $request->rg,

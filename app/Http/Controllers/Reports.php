@@ -14,38 +14,38 @@ class Reports extends Controller
             "consultas" => [
                 [
                     "nomeMedico" => "Dr1",
-                    "paciente" => "fulano 1",
+                    "patient" => "fulano 1",
                     "horario" => "09:00"
                 ],
                 [
                     "nomeMedico" => "Dr2",
-                    "paciente" => "fulano 2",
+                    "patient" => "fulano 2",
                     "horario" => "09:00"
                 ],
                 [
                     "nomeMedico" => "Dr3",
-                    "paciente" => "fulano 3",
+                    "patient" => "fulano 3",
                     "horario" => "09:00"
                 ],
             ],
             "aniversariantes" => [
                 [
-                    "paciente" => "fulano x",
+                    "patient" => "fulano x",
                     "idade" => "33 anos"
                 ]
             ],
             "filaDeEspera" => [
                 [
                     "nomeMedico" => "Dr1",
-                    "paciente" => "fulano 1",
+                    "patient" => "fulano 1",
                 ],
                 [
                     "nomeMedico" => "Dr2",
-                    "paciente" => "fulano 2",
+                    "patient" => "fulano 2",
                 ],
                 [
                     "nomeMedico" => "Dr3",
-                    "paciente" => "fulano 3",
+                    "patient" => "fulano 3",
                 ],
             ],
 

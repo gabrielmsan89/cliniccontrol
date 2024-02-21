@@ -9,7 +9,7 @@
         </ul>
     </div>
     @endif
-    <h1 class="title">Cadastrar paciente</h1>
+    <h1 class="title">Cadastrar patient</h1>
 
     <form method="POST" action="{{ url('/pacientes') }}">
         @csrf
@@ -25,7 +25,7 @@
                 <div class="field">
                     <label class="label">CPF</label>
                     <div class="control">
-                        <input class="input" type="text" placeholder="CPF" name="cpf">
+                        <input class="input" type="text" placeholder="CPF" name="cpf" id="cpf">
                     </div>
                 </div>
 
@@ -92,7 +92,8 @@
                         <input class="input" type="text" placeholder="Endereço" name="address">
                     </div>
                 </div>
-                <input type="submit" value="Salvar" class="button" />
+
+                <br><input type="submit" value="Salvar" class="button" />
             </div>
 
         </div>

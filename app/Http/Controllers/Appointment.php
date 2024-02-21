@@ -15,9 +15,9 @@ class AppointmentData {
     public int $appointment_type_price_id;
 
     public int  $doctor_user_id;
-    public int  $pacient_id;            //aqui tem que poder ser vazio caso o tipo de atendimento seja "Ausente/indisponível"
+    public int  $patient_id;            //aqui tem que poder ser vazio caso o tipo de atendimento seja "Ausente/indisponível"
     public int  $creator_user_id; 
-    public bool $created_by_pacient;    //caso o agendamento tenha sido feito pelo próprio paciente
+    public bool $created_by_patient;    //caso o agendamento tenha sido feito pelo próprio patient
 
     public int $created_at;
     public int $updated_at; 
