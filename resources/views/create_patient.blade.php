@@ -25,14 +25,14 @@
                 <div class="field">
                     <label class="label">CPF</label>
                     <div class="control">
-                        <input class="input" type="text" placeholder="CPF" name="cpf" id="cpf">
+                        <input class="input cpf" type="text" placeholder="CPF">
                     </div>
                 </div>
 
                 <div class="field">
                     <label class="label">RG</label>
                     <div class="control">
-                        <input class="input" type="text" placeholder="RG" name="rg">
+                        <input class="input" type="text" placeholder="RG">
                     </div>
                 </div>
 
@@ -53,7 +53,7 @@
                 <div class="field">
                     <label class="label">CPF do pai</label>
                     <div class="control">
-                        <input class="input" type="text" placeholder="CPF do pai" name="father_cpf">
+                        <input class="input cpf" type="text" placeholder="CPF do pai" name="father_cpf">
                     </div>
                 </div>
             </div>
@@ -61,28 +61,28 @@
                 <div class="field">
                     <label class="label">CPF da mãe</label>
                     <div class="control">
-                        <input class="input" type="text" placeholder="CPF da mãe" name="mother_cpf">
+                        <input class="input cpf" type="text" placeholder="CPF da mãe" name="mother_cpf">
                     </div>
                 </div>
 
                 <div class="field">
                     <label class="label">Telefone</label>
                     <div class="control">
-                        <input class="input" type="text" placeholder="Telefone" name="phone">
+                        <input class="input phone_with_ddd" type="text" placeholder="Telefone">
                     </div>
                 </div>
 
                 <div class="field">
                     <label class="label">E-mail</label>
                     <div class="control">
-                        <input class="input" type="text" placeholder="E-mail" name="email">
+                        <input class="input" type="text" placeholder="E-mail">
                     </div>
                 </div>
 
                 <div class="field">
                     <label class="label">Data de nascimento</label>
                     <div class="control">
-                        <input class="input" type="text" placeholder="Data de nascimento" name="birthday">
+                        <input class="input date" type="text" placeholder="Data de nascimento">
                     </div>
                 </div>
 

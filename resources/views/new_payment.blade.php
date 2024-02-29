@@ -28,7 +28,7 @@
                 <div class="field">
                     <label class="label">Valor</label>
                     <div class="control">
-                        <input name="amount" type="text" />
+                        <input name="amount" type="text" class="money"/>
                     </div>
                 </div>
                 <div class="field">
@@ -40,7 +40,7 @@
                 <div class="field">
                     <label class="label">CPF do pagador</label>
                     <div class="control">
-                        <input name="paid_by_cpf" type="text" />
+                        <input name="paid_by_cpf" type="text" class="cpf" />
                     </div>
                 </div>
             </div>

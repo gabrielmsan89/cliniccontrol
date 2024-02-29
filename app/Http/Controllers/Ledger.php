@@ -75,15 +75,16 @@ class Ledger extends Controller
     {
         $validatedData = $request->validate([
             'patient' => ['required','min:5', 'max:40'],
-            'amount' => ['numeric'],
+            'amount' => ['required'],
             'paid_by' => ['required','min:10', 'max:40'],
             'paid_by_cpf' => ['required','cpf_ou_cnpj']
 
         ]);
+        
         $_SESSION["ledger_entries"][] = [
             "patient" => $validatedData["patient"],
-            "amount" => $request->amount,
-            "paid_by_cpf" => $request->paid_by_cpf,
+            "amount" => preg_replace( '/\D+/', '', $request->amount ),
+            "paid_by_cpf" => preg_replace( '/\D+/', '', $request->paid_by_cpf),
             "paid_by" => $request->paid_by,
             "paid_at" => now()
         ];

@@ -2,6 +2,8 @@
 <link href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" rel="stylesheet">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">  <!--https://materializecss.com/icons.html -->
 
+
+
 <style>
     html,
     body {
@@ -51,14 +53,16 @@
     }
 </style>
 
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js" integrity="sha512-pHVGpX7F/27yZ0ISY+VVjyULApbDlD0/X0rgGbTqCE7WFW5MezNTWG/dnhtbBuICzsd0WQPgpE4REBLv+UqChw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script>
     $(document).ready(function($){
         $('.date').mask('00/00/0000');
         $('.time').mask('00:00:00');
         $('.date_time').mask('00/00/0000 00:00:00');
-        $('#cep').mask('00000-000');
-        $('.phone').mask('0000-0000');
-        $('.phone_with_ddd').mask('(00) 0000-0000');
+        $('.cep').mask('00000-000');
+        $('.phone').mask('00000-0000');
+        $('.phone_with_ddd').mask('(00) 00000-0000');
         $('.phone_us').mask('(000) 000-0000');
         $('.mixed').mask('AAA 000-S0S');
         $('.cpf').mask('000.000.000-00', {reverse: true});
